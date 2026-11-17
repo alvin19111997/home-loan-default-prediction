@@ -1,59 +1,22 @@
-# home-loan-default-prediction
-A machine learning project to predict home loan default risk using applicant financial data, bureau reports, and previous credit history. Includes data preprocessing, feature engineering, and model evaluation.
----
+# Home Loan Default Prediction
 
-## 🔍 Problem Statement
+## Problem
+Predict home-loan default risk from applicant and loan records.
 
-Banks want to assess the risk of loan applicants defaulting on their home loans. This project uses historical loan application data along with supplementary sources like previous applications and bureau data to build a predictive model.
+## Data
+The project analyzes approximately **250,000 records**. The repository contains the analysis notebook; source data is not included in the repository root.
 
----
+## Approach
+Built an XGBoost prediction model and evaluated its performance using ROC-AUC.
 
-## 🧰 Tools & Technologies
+## Result
+The model achieved **ROC-AUC greater than 0.78**.
 
-- Python
-- Pandas, NumPy
-- Matplotlib, Seaborn
-- Scikit-learn
-- Jupyter Notebook
-- XGBoost / Logistic Regression
-- Git & GitHub
+## How to Run
+1. Clone this repository.
+2. Install Python, Jupyter, pandas, NumPy, scikit-learn, and XGBoost.
+3. Open and run `PRCP-1006-HomeLoanDef.ipynb`.
+4. Provide the input data in the path expected by the notebook; data files are not included here.
 
----
-
-## 🧼 Key Data Cleaning Steps
-
-- Handled missing values using median/mode imputation
-- Dropped highly null or redundant features
-- Winsorized extreme outliers (capped at 5%)
-- Removed multicollinear features (correlation > 0.85)
-- Encoded categorical variables (ordinal, one-hot, frequency)
-
----
-
-## ⚖️ Class Imbalance Handling
-
-Only ~8% of applicants were defaulters. To prevent bias:
-- Stratified train-test split
-- Applied `class_weight='balanced'` during modeling
-
----
-
-## 📈 Modeling
-
-Tested the following algorithms:
-- Logistic Regression (baseline)
-- Random Forest
-- XGBoost (best performance)
-
-Metrics evaluated:
-- Accuracy
-- F1 Score
-- ROC-AUC
-
----
-
-## ✅ Final Result
-
-Achieved **balanced performance** with ROC-AUC > 0.78 using XGBoost on the cleaned and engineered feature set.
-
----
+## Tech Stack
+Python, pandas, NumPy, scikit-learn, XGBoost, Jupyter Notebook
